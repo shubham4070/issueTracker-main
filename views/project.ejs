@@ -1,0 +1,52 @@
+<body>
+    <section class="py-5">
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0 font-weight-bold"><%=name.toUpperCase()%>: Issues <i class="fas fa-bug"></i></h2>
+                      </div>
+                      
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Array for issue to display -->
+                            <div class="row">
+                                <% for(let i=0; i<project.issues.length; i++) { %>
+                                  <div class="col-md-4">
+                                    <div class="card">
+                                      <div class="card-header">
+                                        <h4 class="card-title mb-0 font-weight-bold">Title : <%=project.issues[i].title.toUpperCase()%></h4>
+                                        <p class="card-subtitle mb-2 text-muted">Author : <%=project.issues[i].author%></p>
+                                      </div>
+                                      <div class="card-body">
+                                        <p class="card-text"><%=project.issues[i].description%></p>
+                                      </div>
+                                      <!-- Array for the labels tag -->
+                                      <div class="card-footer">
+                                        <% for(let j=0; j<project.issues[i].labels.length; j++) { %>
+                                          <span class="badge bg-secondary"><%=project.issues[i].labels[j]%></span>
+                                        <% } %>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <% } %>
+                              </div>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- filter Issue section -->
+            <%-include('_filter')%>
+
+        </div>
+        </div>
+
+        <!-- Create Issue Modal Section -->
+        <%-include('_issue-models')%>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+</body>

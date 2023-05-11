@@ -1,0 +1,73 @@
+<div class="col-md-3">
+    <div class="card">
+        <div class="card-header">Filters</div>
+        <div class="card-body">
+            <div class="mb-3">
+                <form action="/project/<%= pid %>/filter" method="GET">
+                <label for="label-filter" class="form-label">Labels</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  id="label1" name="labels" value="Bug">
+                    <label class="form-check-label" for="label1">
+                        Bug
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  id="label2" name="labels" value="UI Improvement">
+                    <label class="form-check-label" for="label2">
+                        UI Improvement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  id="label3" name="labels" value="Documentation">
+                    <label class="form-check-label" for="label3">
+                        Documentation
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  id="label4" name="labels" value="Enhancement">
+                    <label class="form-check-label" for="label3">
+                        Enhancement
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">
+                    <i class="fas fa-filter me-1"></i> Apply Filter
+                </button>
+                </form>
+            </div>
+
+
+            <!-- Search by author -->
+            <div class="input-group mb-3">
+                <form action="/project/<%= pid %>/author" method="GET">
+                    <label for="author-filter" class="form-label">Author</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="author-filter" placeholder="Search by author"
+                            name="author">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- search by title -->
+            <div class="input-group mb-3">
+                <form action="/project/<%=pid %>/title" method="GET">
+                    <input type="hidden" name="" value="">
+                    <label for="title-filter" class="form-label">Title</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="title-filter" placeholder="Search by title"
+                            name="title">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <button class="btn btn-primary mt-3" id="create-project-button" data-bs-toggle="modal"
+                data-bs-target="#issueModal"><i class="fas fa-plus me-2"></i>Create New Issue</button>
+
+        </div>
+    </div>

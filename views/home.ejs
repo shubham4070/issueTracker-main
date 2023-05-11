@@ -1,0 +1,42 @@
+<style>
+  .list-group-item:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.25rem);
+  }
+</style>
+<body>
+  <main>
+    <section class="py-5">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Projects</h2>
+        <ul class="list-group" id="project-list">
+          
+            <% for(var i=0; i< Projects.length; i++) { %>
+              <li class="list-group-item shadow-lg mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5 class="mb-0"><%= Projects[i].name %></h5>
+                  <a href="/project/<%= Projects[i]._id %>" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Open Project</a>
+                </div>
+                <div class="my-2"><%= Projects[i].description %></div>
+                <div>Author: <%= Projects[i].author %></div>
+              </li>
+            <% } %>
+          
+
+          
+        </ul>
+        <button class="btn btn-primary mt-3" id="create-project-button" data-bs-toggle="modal"
+          data-bs-target="#project-modal"><i class="fas fa-plus me-2"></i>Create New Project</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <%-include('_modal')%>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>

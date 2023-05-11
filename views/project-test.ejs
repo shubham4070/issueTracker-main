@@ -1,0 +1,87 @@
+<head>
+    <title>Issue Tracker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <button class="btn btn-primary mt-3" id="create-project-button" data-bs-toggle="modal"
+                data-bs-target="#project-modal"><i class="fas fa-plus me-2"></i>Create New Project</button>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Issue Title 1</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Author Name 1</h6>
+                                <p class="card-text">Description of the issue goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Issue Title 2</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Author Name 2</h6>
+                                <p class="card-text">Description of the issue goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Issue Title 3</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Author Name 3</h6>
+                                <p class="card-text">Description of the issue goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Filter by Label</h5>
+                        <form>
+                            <div class="form-group">
+                                <select class="form-control" id="label-select">
+                                    <option>All</option>
+                                    <option>BUG</option>
+                                    <option>Documentation</option>
+                                    <option>UI Improvement</option>
+                                    <option>Enhancement</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Search by Title</h5>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="search-input" placeholder="Enter title">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Modal -->
+    <%-include('_issue-models')%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</body>
