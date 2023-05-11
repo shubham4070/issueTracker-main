@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://localhost:27017/issueTracker', {
+mongoose.connect('mongodb+srv://shubham21101997:1AXDBJsPzCwSUDHe@cluster0.34adl9j.mongodb.net/issueTracker?retryWrites=true&w=majority', {
     // useCreateIndex: true,
     useNewUrlParser:true,
     useUnifiedTopology: true,
